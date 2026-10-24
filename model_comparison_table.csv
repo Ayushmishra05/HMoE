@@ -1,0 +1,17 @@
+Rank,Model,Category,Silhouette (↑),DBI (↓),Calinski-Harabasz (↑),Stability ARI (↑),Max Retention %,Corrected Lift (×),Interpretation
+1,Hierarchical MoE,MoE / Phase 13,0.590873,0.638034,19223.176,0.999912,,,Best adaptive multimodal geometry; Phase 13 retention not yet reported
+2,Temporal-only,Unimodal,0.596058,0.663542,18176.656,1.0,,,Strongest standalone geometry; limited by short histories for most customers
+3,Text + temporal fixed-weight,Static fusion,0.557928,0.779689,9113.616,1.0,,,Strongest static multimodal baseline
+4,KMeans RFM,Legacy baseline,0.5314,0.6182,7213.43,0.9937,4.705882,3.756427,Best reported retention separation; interpretable benchmark
+5,KMeans all engineered,Legacy baseline,0.5096,1.1484,1646.96,0.9996,4.49,3.583938,"Strong retention result, weaker geometry than RFM"
+6,Text-only,Unimodal,0.624421,3.474894,1704.446,0.990473,,,High silhouette but weak compactness and lower stability
+7,Behavioral-only,Unimodal,0.417657,1.157549,3857.446,0.999362,,,"Complete and interpretable view, moderate geometry"
+8,Fixed behavioral-heavy,Simple MoE / Phase 10,0.374525,1.214152,3350.098,0.99969,2.192982,1.752785,Best Phase 10 route but below static fusion
+9,KMeans RFM + behavioral,Legacy baseline,0.3379,1.0759,2691.23,0.9998,4.33,3.456948,"High retention lift, lower silhouette"
+10,Uniform routing,Simple MoE / Phase 10,0.27308,1.290308,3805.605,0.995613,,,Routing without specialization
+11,Quality-aware gate,Simple MoE / Phase 10,0.277735,1.336678,3889.77,0.997184,,,Simple quality gate did not improve geometry
+12,Standard learned gate,Simple MoE / Phase 10,0.268705,1.345548,3795.696,0.978325,,,Lowest Phase 10 geometry and stability
+13,KMeans selected non-redundant,Legacy baseline,0.3253,1.2518,1865.92,0.6034,4.65,3.712748,Retention lift strong; stability comparatively low
+14,DEC,Deep clustering,0.1429,1.6039,1490.72,0.5829,4.65,3.712748,Retention separation without competitive geometry
+15,HDBSCAN,Density-based,0.1209,1.9047,1497.21,1.0,2.6,2.073353,Stable assignments but weak cluster separation
+16,GMM,Probabilistic,0.0784,1.913,930.07,0.5582,3.35,2.673534,Weakest geometry among reported models
